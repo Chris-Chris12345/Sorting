@@ -3,7 +3,7 @@ import time
 
 
 startTime = 0
-numbers = [random.randint(1,100) for i in range(10)]
+numbers = [random.randint(1,100) for i in range(100)]
 print("Original list: " + str(numbers))
 
 #Bubble sort
@@ -29,13 +29,13 @@ def insertionSort(arr):
             j[k+1] = j[k]
             shift += 1
             k -= 1
-        key = j[k+1]
+        j[k+1] = key
     return j, shift
 
 #Merge sort
 def mergeSort(arr):
-    """if len(arr) <= 1:
-        return arr"""
+    if len(arr) <= 1:
+        return arr
     mid = len(arr) // 2
     left = mergeSort(arr[:mid])
     right = mergeSort(arr[mid:])
